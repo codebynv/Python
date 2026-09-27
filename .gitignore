@@ -1,3 +1,12 @@
-/not kamnu
-/Syllabus
-/UNIT WISE PPT
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local tooling
+.vscode/
+.idea/
