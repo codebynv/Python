@@ -1,0 +1,23 @@
+name: Learning improvement
+description: Suggest a clear improvement to a Python exercise
+title: "[Improvement]: "
+labels: ["enhancement"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: File or exercise
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is confusing or incorrect?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+    validations:
+      required: false
