@@ -1,12 +1,17 @@
-# Flatten Nested List
+# Flatten a Nested List at Any Depth
 
-nested = [[1,2],[3,4],[5,6]]
+nested = [[1, 2], [3, [4, 5]], [6, [7, [8]]]]
 
-flat = []
+def flatten(items):
+    flat = []
+    for item in items:
+        if isinstance(item, list):
+            flat.extend(flatten(item))
+        else:
+            flat.append(item)
+    return flat
 
-for sublist in nested:
-    for item in sublist:
-        flat.append(item)
+flat = flatten(nested)
 
 print("Nested List =", nested)
-print("Flatten List =", flat)
+print("Flattened List =", flat)
