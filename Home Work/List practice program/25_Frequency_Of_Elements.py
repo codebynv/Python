@@ -1,14 +1,8 @@
-# Find Frequency of Each Element
+# Count the frequency of each list element.
+
+from collections import Counter
 
 numbers = [10, 20, 10, 30, 20, 10, 40]
+frequency = Counter(numbers)
 
-frequency = {}
-
-for num in numbers:
-
-    if num in frequency:
-        frequency[num] += 1
-    else:
-        frequency[num] = 1
-
-print(frequency)
+print("Frequencies =", dict(frequency))
