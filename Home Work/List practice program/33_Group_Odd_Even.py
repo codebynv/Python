@@ -1,17 +1,12 @@
-# Group Elements into Odd and Even Lists
+# Group list elements into even and odd values in one pass.
 
 numbers = [10, 15, 22, 31, 44, 57, 60]
 
 even = []
 odd = []
 
-for num in numbers:
-
-    if num % 2 == 0:
-        even.append(num)
-
-    else:
-        odd.append(num)
+for number in numbers:
+    (even if number % 2 == 0 else odd).append(number)
 
 print("Even Numbers :", even)
 print("Odd Numbers :", odd)
