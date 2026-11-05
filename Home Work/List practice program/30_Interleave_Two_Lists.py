@@ -1,13 +1,15 @@
-# Interleave Two Lists
+# Interleave two lists, keeping remaining values from the longer list.
+
+from itertools import zip_longest
 
 list1 = [1, 3, 5]
+list2 = [2, 4, 6, 8, 10]
 
-list2 = [2, 4, 6]
-
-result = []
-
-for i in range(len(list1)):
-    result.append(list1[i])
-    result.append(list2[i])
+result = [
+    item
+    for pair in zip_longest(list1, list2, fillvalue=None)
+    for item in pair
+    if item is not None
+]
 
 print("Interleaved List :", result)
