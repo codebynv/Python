@@ -1,10 +1,13 @@
-# Remove All Occurrences of a Value
+# Remove all occurrences of a selected value in one pass.
 
 numbers = [10, 20, 30, 20, 40, 20, 50]
 
-value = int(input("Enter Value to Remove: "))
+try:
+    value = int(input("Enter Value to Remove: "))
+    updated = [number for number in numbers if number != value]
 
-while value in numbers:
-    numbers.remove(value)
-
-print("Updated List :", numbers)
+    print("Original List :", numbers)
+    print("Updated List :", updated)
+    print("Removed Count :", len(numbers) - len(updated))
+except ValueError:
+    print("Please enter a valid integer.")
