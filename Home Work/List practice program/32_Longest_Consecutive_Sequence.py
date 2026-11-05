@@ -1,21 +1,18 @@
-# Find Longest Consecutive Sequence
+# Find the length of the longest consecutive integer sequence in O(n) average time.
 
-numbers = [100, 4, 200, 1, 3, 2]
+numbers = [100, 4, 200, 1, 3, 2, 2]
+values = set(numbers)
+longest = 0
 
-numbers.sort()
+for number in values:
+    if number - 1 not in values:
+        current = number
+        length = 1
 
-count = 1
-maximum = 1
+        while current + 1 in values:
+            current += 1
+            length += 1
 
-for i in range(len(numbers) - 1):
+        longest = max(longest, length)
 
-    if numbers[i] + 1 == numbers[i + 1]:
-        count += 1
-
-    elif numbers[i] != numbers[i + 1]:
-        count = 1
-
-    if count > maximum:
-        maximum = count
-
-print("Longest Consecutive Sequence Length =", maximum)
+print("Longest Consecutive Sequence Length =", longest)
