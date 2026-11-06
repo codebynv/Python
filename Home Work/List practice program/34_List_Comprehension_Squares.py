@@ -1,5 +1,13 @@
-# Squares of Numbers 1 to 20
+# Generate squares for a configurable inclusive integer range.
 
-squares = [num ** 2 for num in range(1, 21)]
+try:
+    start = int(input("Enter start number: "))
+    end = int(input("Enter end number: "))
 
-print(squares)
+    if start > end:
+        raise ValueError("Start must not be greater than end.")
+
+    squares = [number ** 2 for number in range(start, end + 1)]
+    print("Squares:", squares)
+except ValueError as error:
+    print("Invalid range:", error)
