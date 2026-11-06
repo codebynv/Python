@@ -1,9 +1,12 @@
-# Convert List of Strings to Uppercase
+# Convert string values to uppercase without failing on non-string entries.
 
-names = ["ram", "shyam", "mohan", "nirav"]
+names = [" ram ", "shyam", None, "mohan", 42, "nirav"]
 
-upper = [name.upper() for name in names]
+upper = [
+    name.strip().upper()
+    for name in names
+    if isinstance(name, str)
+]
 
 print("Original List :", names)
-
 print("Uppercase List :", upper)
