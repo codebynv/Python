@@ -1,18 +1,24 @@
-# Prime Numbers up to 100
+# Generate all prime numbers up to a configurable limit.
 
-prime = []
+try:
+    limit = int(input("Generate primes up to: "))
+    if limit < 2:
+        print("There are no prime numbers below 2.")
+    else:
+        primes = []
+        for number in range(2, limit + 1):
+            is_prime = True
+            divisor = 2
 
-for num in range(2, 101):
+            while divisor * divisor <= number:
+                if number % divisor == 0:
+                    is_prime = False
+                    break
+                divisor += 1
 
-    is_prime = True
+            if is_prime:
+                primes.append(number)
 
-    for i in range(2, num):
-
-        if num % i == 0:
-            is_prime = False
-            break
-
-    if is_prime:
-        prime.append(num)
-
-print(prime)
+        print("Prime Numbers:", primes)
+except ValueError:
+    print("Please enter a valid integer.")
