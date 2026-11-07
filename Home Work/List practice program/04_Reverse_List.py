@@ -1,9 +1,9 @@
-# Reverse List without reverse()
+# Reverse a list using slicing without changing the original list.
 
 numbers = [10, 20, 30, 40, 50]
 
+reversed_numbers = numbers[::-1]
+
 print("Original List =", numbers)
-
-reverse = numbers[::-1]
-
-print("Reversed List =", reverse)
+print("Reversed Copy =", reversed_numbers)
+print("Original Unchanged =", numbers == [10, 20, 30, 40, 50])
