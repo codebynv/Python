@@ -1,12 +1,19 @@
-# Sum of All Elements
+# Calculate the sum of all elements using an explicit loop.
 
-numbers = [10, 20, 30, 40, 50]
+def calculate_sum(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
 
-total = 0
 
-for num in numbers:
-    total += num
+examples = [
+    [10, 20, 30, 40, 50],
+    [],
+    [-5, 10, -2],
+]
 
-print("List =", numbers)
-
-print("Sum =", total)
+for numbers in examples:
+    print("List =", numbers)
+    print("Sum =", calculate_sum(numbers))
+    print("-" * 25)
